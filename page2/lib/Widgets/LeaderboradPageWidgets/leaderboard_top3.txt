@@ -1,0 +1,27 @@
+  Widget _topBuildAvatarColumn(int rank,String imageUrl, String name, String score, double avatarRadius, String medalIconPath) {
+    return Column(
+      children: [
+        Spacer(flex: 10,),
+        Stack(
+          children: [
+            CircleAvatar(
+              radius: avatarRadius,
+              backgroundImage: NetworkImage(imageUrl),
+            ),
+            Positioned(
+              top: 0,
+              left: 0,
+              child: Image.asset(
+                'assets/icons/$medalIconPath',
+                height: avatarRadius * 0.75,
+                width: avatarRadius * 0.75,
+              ),
+            ),
+          ],
+        ),
+        Text(name),
+        Text(score),
+        Spacer(flex: 3,),
+      ],
+    );
+  }
